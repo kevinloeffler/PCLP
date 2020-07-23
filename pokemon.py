@@ -232,6 +232,9 @@ shop
   healing   buys one healing potion
   revive    buys one revive potion
   level     buys one level potion
+  [type]    shows all available Pokemon of this type
+    [name]  enter the name of the Pokemon you want to buy
+    no      cancel the buy process
   exit      leave the shop
 
 stats       print your gold and all your Pokemon
