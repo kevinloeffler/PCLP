@@ -325,7 +325,6 @@ def fight():
 shopErrorMessage = "You don't have enough gold."
 
 def shop():
-    player.gold = 1000  # FOR DEBUGGIN ONLY - REMOVE BEFORE RELEASE!!!!!
     print("Welcome to the shop. What are you looking for? When your done, type exit.")
     print("Potions: [healing | revive | level]")
     print("Pokemon: [Earth | Water | Air | Fire | Electro]")
@@ -422,8 +421,6 @@ player = Player(playerName, [playerPokemon])
 sleep(0.6)
 
 print(startingMessage)
-
-player.pokemon.append(pikachu)  # IMPORTANT FOR TESTING, REMOVE BEFORE RELEASE!!!!!
 
 while True:
     pass
