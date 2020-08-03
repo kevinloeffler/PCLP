@@ -319,7 +319,6 @@ def fight():
         player.gold += 80
     else:
         print("You ran away.")
-    pikachu = activePokemon
     status = True
 
 shopErrorMessage = "You don't have enough gold."
