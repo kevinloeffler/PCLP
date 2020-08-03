@@ -395,7 +395,7 @@ def shop():
                     break
 
 def stats():
-    print("You have {gold} gold and you Pokemon are:".format(gold = player.gold))
+    print("You have {gold} gold and the following Pokemon:".format(gold = player.gold))
     for pk in player.pokemon:
         print(pk)
 
