@@ -218,7 +218,7 @@ commands = ["fight", "shop"]
 
 startingMessage = """
 Welcome to a new Pokemon experience... This is "Phyton Command Line Pokemon!"
-You start with {gold} gold, 1 pokemon and - sadly - no potions. You have to fight other pokemon trainers to earn more gold, buy cool stuff and level you pokemon up. Like the name suggest you can only control this game via command line. To learn more about what you can do, type "help" and to exit, type "quit".
+You start with {gold} gold, one pokemon and one healing potion. You have to fight other pokemon trainers to earn more gold, buy cool stuff and level your pokemon up. Like the name suggest you can only control this game via command line. To learn more about what you can do, type "help" and to exit, type "quit".
 """.format(gold = startingGold)
 
 helpMessage = """
