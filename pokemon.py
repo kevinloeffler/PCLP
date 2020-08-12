@@ -379,7 +379,7 @@ def shop():
         shopInput = input("Type the name of a Pokemon or [no] to exit: ")
         for pk in pkTypeArray:
             if shopInput == pk.name:
-                print("Do you want to buy {name} for 100 Gold?".format(name = pk.name))
+                print("Do you want to buy {name} for 60 Gold?".format(name = pk.name))
                 shopInput = input("[y/N] ")
                 if shopInput in yes:
                     if pk in player.pokemon:
@@ -395,7 +395,7 @@ def shop():
                     break
 
 def stats():
-    print("You have {gold} gold and you Pokemon are:".format(gold = player.gold))
+    print("You have {gold} gold and the following Pokemon:".format(gold = player.gold))
     for pk in player.pokemon:
         print(pk)
 
@@ -410,7 +410,7 @@ sleep(0.6)
 
 while playerPokemon not in startingPokemon:
     for strPokemon in startingPokemon:
-        cache = input(strPokemon.name + " [y/N] ")
+        cache = input(strPokemon.name + " (" + strPokemon.type + ")" + " [y/N] ")
         if cache in yes:
             playerPokemon = strPokemon
             print("You choose " + playerPokemon.name)
@@ -440,11 +440,19 @@ while True:
         elif userInput == "shop":
             shop()
             break
+        elif userInput == "potion":
+            print("What potion do you want to use?")
+            poInput = input("healing | revive | level ")
+            pkInput = input("On what pokemon do you want to use {potion} potion?")
+            # Loop through player pokemon
+            if poInput == "healing":
+                pass
+                # apply healing potion
         elif userInput == "stats":
             stats()
             break
         elif userInput == "credits":
-            print("Developed as a student project by Kevin Loeffler")
+            print("Developed by Kevin Loeffler")
             break
         elif userInput == "hello world":
             print("Hi there!")
