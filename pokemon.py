@@ -421,6 +421,102 @@ sleep(0.6)
 
 print(startingMessage)
 
+### Start of Tutorial ###
+
+tutorialInput = input("Do you want to play the tutorial?\n[y/N] ")
+if tutorialInput in yes:
+    print("Great, let's get an overview over your inventory to see what we are working with. Type 'stats'")
+    tutorialInput = input(">> ")
+    while tutorialInput != "stats":
+        print("Type 'stats'")
+        tutorialInput = input(">> ")
+    print("Well done. You have {gold} gold, your starting pokemon '{pk}' and one healing potion.\n".format(gold = player.gold, pk = player.pokemon[0].name))
+    sleep(0.4)
+    # Explain the fight mechanic
+    print("It looks like you are for your first fight. Type 'fight'")
+    tutorialInput = input(">> ")
+    while tutorialInput != "fight":
+        print("Type 'fight'")
+        tutorialInput = input(">> ")
+    print("You face off against {opponent}".format(opponent = random.choice(opponents)))
+    sleep(0.4)
+    print("Your opponent picked Smettbo. Luckily it is of type 'bug' which means your pokemon gets an advantage.\n")
+    sleep(0.6)
+    print("There are five regular types of pokemon: Earth, air, water, fire and electro. (Bug is tutorial only) Depending on the combination, you either get an advantage or a disadvantage:")
+    sleep(0.8)
+    print("EARTH beats AIR beats WATER beats FIRE beats EARTH. ELECTRO beats all of them. So for example if you have a WATER pokemon, you get a 1.5x boost against any FIRE pokemon and recive a 0.75x buff agains all AIR pokemon.\n")
+    sleep(0.8)
+    print("With all of that settled, lets start the fight by typing 'attack'!")
+    tutorialInput = input(">> ")
+    while tutorialInput != "attack":
+        print("Type 'attack'")
+        tutorialInput = input(">> ")
+    tutorialInput = ""  # Reset Input String
+    print("{pk} attacked Smettbo and dealt 30 damage. It has 70 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("Now its your opponents turn:")
+    sleep(0.4)
+    print("Smettbo attacked {pk} and dealt 20 damage. It has 80 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("\nOuch that hurt, payback time: type 'attack'")
+    tutorialInput = input(">> ")
+    while tutorialInput != "attack":
+        print("Type 'attack'")
+        tutorialInput = input(">> ")
+    print("{pk} attacked Smettbo and dealt 30 damage. It has 40 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("Smettbo attacked {pk} and dealt 20 damage. It has 60 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("\nWe are making good progress, but our health is getting low. Let's use a healing potion. Type 'potion'")
+    tutorialInput = input(">> ")
+    while tutorialInput != "potion":
+        print("Type 'potion'")
+        tutorialInput = input(">> ")
+    tutorialInput = input("What potion do you want to use [healing | revive | level]: ")
+    while tutorialInput != "healing":
+        print("Type 'healing'")
+        tutorialInput = input(">> ")
+    print("Healing potion used. {pk} now has 100 health.".format(pk = player.pokemon[0].name))
+    print("Using a potion counts as one turn, so be aware of how you use them.\n")
+    sleep(0.4)
+    print("Smettbo attacked {pk} and dealt 20 damage. It has 60 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("Now let's finish this fight: type 'attack'")
+    while tutorialInput != "attack":
+        print("Type 'attack'")
+        tutorialInput = input(">> ")
+    print("{pk} attacked Smettbo and dealt 30 damage. It has 0 hp left.".format(pk = player.pokemon[0].name))
+    sleep(0.4)
+    print("Smettbo is knocked out\n")
+    sleep(0.4)
+    print("Congratulation on your first victory. As a price you get 25 gold")
+    sleep(0.4)
+    # Explain the shop:
+    print("Let's head to the shop to spend our hard earned money. Type 'shop'")
+    tutorialInput = input(">> ")
+    while tutorialInput != "shop":
+        print("Type 'shop'")
+        tutorialInput = input(">> ")
+    print("Here you can buy additional pokemon. It's usefull to always have some different types when you go into battle.")
+    sleep(0.4)
+    print("But for now let's have a look at the different potions. We should restock our used healing potion. Type 'healing'.")
+    tutorialInput = input(">> ")
+    while tutorialInput != "healing":
+        print("Type 'healing'")
+        tutorialInput = input(">> ")
+    print("Do you want to buy a healing potion for 25 Gold? You have 125 gold.")
+    tutorialInput = input("[y/N] ")
+    while tutorialInput not in yes:
+        print("Type 'y'")
+        tutorialInput = input(">> ")
+    print("You now have 1 healing Potion and 100 gold left.")
+    sleep(0.4)
+    print("Good job, we are fully restockd and ready for further adventures.")
+    sleep(0.4)
+    print("You can always check you gold and pokemon by typing 'stats'. For a list of all commands type 'help'. Have fun out there!")
+
+### End of tutorial ###
+
 while True:
     pass
     userQuit = False
